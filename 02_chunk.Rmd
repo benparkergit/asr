@@ -1,0 +1,25 @@
+---
+title: "Chunk 2"
+output: html_document
+---
+---
+title: "Chunk 2"
+output: html_document
+---
+echo=F
+```{r loading, warning=F, message=F}
+# load packages
+library(tidyverse)
+
+# Loading the Boston city payroll
+#payroll <- read_csv("data/bostonpayroll2013.csv")
+payroll <- read_csv("/Users/ben/PycharmProjects/ASR/finals/asr-2017-32356.csv")
+payroll_small <- select(payroll, country, supplier, value)
+```
+
+Let's look at the data in R Markdown with a new package called [`DT`](https://rstudio.github.io/DT/) that uses the Datatables [jquery library](https://datatables.net/).
+
+```{r display_data, warning=F}
+library(DT)
+datatable(payroll_small)
+```
