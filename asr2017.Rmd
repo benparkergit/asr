@@ -1,0 +1,30 @@
+---
+title: "ASR2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+```{r loading, warning=F, message=F}
+# load packages
+library(tidyverse)
+
+# data
+asr <- read_csv("/Users/ben/PycharmProjects/ASR/finals/asr-2017-32356.csv")
+asr_small <- select(asr, supplier, country, agency, value, year)
+```
+
+
+```{r display_data, warning=F}
+library(DT)
+datatable(asr_small)
+```
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
