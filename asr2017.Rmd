@@ -1,5 +1,5 @@
 ---
-title: "ASR2017"
+title: "ASR 2017"
 output: html_document
 ---
 
@@ -9,7 +9,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 
-```{r loading, warning=F, message=F}
+```{r loading, warning=F, message=F, echo=F}
+
 # load packages
 library(tidyverse)
 
@@ -19,12 +20,12 @@ asr_small <- select(asr, supplier, country, agency, value, year)
 ```
 
 
-```{r display_data, warning=F}
+```{r display_data, warning=F, echo=FALSE}
 library(DT)
 datatable(asr_small)
 ```
 ```{r pressure, echo=FALSE}
-plot(pressure)
+#plot(pressure)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
